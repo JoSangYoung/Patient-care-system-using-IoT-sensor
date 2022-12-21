@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Room List{% endblock %}
+
+{% load staticfiles %}
+{% block extrastyle %}{% static "cctv/cctv.css" %}{% endblock %}
+
+{% block content %}
+<div id="content">
+
+<hr/>
+
+<div>
+    {% for item in object_list %}
+    <a href = {{ item.get_absolute_url }}>
+    {{ item.RoomName }}
+    </a>
+    <div> 
+        <img class="thumbnail" src="http://{{ item.Ip }}:{{ item.CamPort }}/?action=stream" /> 
+    </div>
+    {% endfor %}
+</div>
+
+
+</div>
+{% endblock %}
+

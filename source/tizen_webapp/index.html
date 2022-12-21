@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width,user-scalable=no">
+	<title>Circular UI</title>
+	<link rel="stylesheet" href="lib/tau/wearable/theme/default/tau.min.css">
+	<link rel="stylesheet" media="all and (-tizen-geometric-shape: circle)" href="lib/tau/wearable/theme/default/tau.circle.min.css">
+	<!-- load theme file for your application -->
+	<link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+	<!-- 첫번째 화면. 병실 호수 리스트 표시. -->
+	<div id="mainPage" class="ui-page ui-page-active">
+		<header class="ui-header">
+			<h2 class="ui-title">DELAB 병원</h2>
+		</header>
+		<div class="ui-content content-padding">	
+			<ul class="ui-listview patientRoom">
+				<li>138호</li>
+			</ul>
+		</div>
+	</div>
+	
+	<!-- 두번째 화면. 병실 정보나 환자 정보 선택 화면. -->
+	<div id="selectPage" class="ui-page">
+		<header class="ui-header">
+			<h2 class="ui-title">138호</h2>
+		</header>
+		<ul class="ui-content ui-listview">
+			<li id="patientRoomDetail">병실 정보</li>
+			<li class="patientDetail">환자1</li>
+		</ul>
+	</div>
+	
+	<!-- 병실 정보 화면. 쓰레기통, 온습도, 유해가스 정보 표시. -->
+	<div id="patientRoomDetailPage" class="ui-page">
+		<header>
+			<h2 class="ui-title">병실 정보</h2>
+		</header>
+		
+		<div class="ui-content">
+			<ul class="ui-listview ui-snap-listview expand-list">	
+				<li>온도<br><span id="temperature">No data</span></li>
+				<li>습도<br><span id="humidity">No data</span></li>
+				<li>쓰레기통<br><span id="wasteBasketRemains">No data</span></li>
+				<li>유해가스<br><span id="toxicGasState">No data</span></li>  
+			</ul>
+		</div>
+	</div>
+	
+	<!-- 환자 정보 화면. 링거, 소변통 정보 표시. -->
+	<div id="patientDetailPage" class="ui-page">
+		<header>
+			<h2 class="ui-title">환자 정보</h2>
+		</header>
+		
+		<div class="ui-content">
+			<ul class="ui-listview ui-snap-listview expand-list">	
+				<li>소변통<br><span id="urineBagRemains">No data</span></li>
+				<li>링거<br><span id="ringerRemains">No data</span></li>
+			</ul>
+		</div>
+	</div>
+			<script type="text/javascript" src="lib/tau/wearable/js/tau.min.js"></script>
+	<script type="text/javascript" src="js/circle-helper.js"></script>
+	<script src="app.js"></script>
+	<script src="lowBatteryCheck.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+/* album_list.html */
+div.cctv-list {
+    margin: 20px 50px;
+}
+
+div.cctv-list-photo {
+    float: left;
+    width: 150px;
+    height: 180px;
+}
+
+/* cctv_detail.html */
+table.cctv-detail {
+    margin: 30px 50px 0 50px;
+    border: 1px solid #ccc;
+    padding: 20px 20px;
+}
+
+table.cctv-detail td {
+    width: 50%;
+}
+
+table.cctv-detail ul li {
+    font-weight: bold;
+}
+
+table.cctv-detail ul p {
+    font-style: italic;
+}
+
+/* common */
+img.thumbnail {
+    border:3px solid #ccc;
+    width:125px;
+    height:125px;
+}
+
+div.clear_float {
+    clear: both;
+}

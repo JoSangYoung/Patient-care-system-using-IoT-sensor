@@ -1,0 +1,7 @@
+eclipse.preferences.version=1
+project.cr4.flash.time.Debug=1505573733268
+project.system.flashed.Debug=1
+project.tizenrt.preConfig=extra
+project.tizenrt.priority=100
+project.tizenrt.sdk.path=artik053_1.0
+project.tizenrt.stacksize=18432

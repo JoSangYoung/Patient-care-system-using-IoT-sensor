@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<title>{% block title %}Patient Room Care System{% endblock %}</title>
+
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static "css/base.css" %}" />
+<link rel = "stylesheet" type="text/css" href="{% block extrastyle %}{% endblock %}" />
+
+</head>
+
+<body>
+    <img src="{% static "css/green_cross.jpeg" %}" width="30" height="30" />
+<div id="header">
+    <h2><a href = "{% url 'home' %}" style="color:white">Pateint Room Monitoring</a></h2> 
+</div>
+
+<div id="menu">
+    <li><a href="{% url 'home' %}">Home</a></li> 
+    <li><a href="{% url 'cctv:index' %}">Manage</a></li>
+    <li><a href="{% url 'admin:index'%}">Admin</a></li> 
+</div>
+
+{% block content %}{% endblock %}
+
+{% block footer %}{% endblock %}
+
+</body>
+</html>

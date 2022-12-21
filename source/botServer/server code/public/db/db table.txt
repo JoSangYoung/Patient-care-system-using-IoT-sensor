@@ -1,0 +1,45 @@
+drop database careDB;
+
+create database careDB;
+
+use careDB;
+
+create table timetable(
+no int not null auto_increment,
+year varchar(10),
+month varchar(10),
+day varchar(10),
+week varchar(10),
+t06_08 varchar(10),
+t08_10 varchar(10),
+t10_12 varchar(10),
+t12_14 varchar(10),
+t14_16 varchar(10),
+t16_18 varchar(10),
+t18_20 varchar(10),
+t20_22 varchar(10),
+primary key(no)
+);
+
+
+create table menu(
+no int not null auto_increment,
+year varchar(10),
+month varchar(10),
+day varchar(10),
+week varchar(10),
+breakfast varchar(50),
+lunch varchar(50),
+dinner varchar(50),
+primary key(no)
+);
+
+
+create table medicine(
+no int not null auto_increment,
+name varchar(20),
+symptom varchar(20),
+caution varchar(50),
+img varchar(50),
+primary key(no)
+);

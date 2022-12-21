@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<title></title>
+
+<style>
+	button {
+		width: 110px;
+		height: 50px;
+		font-size: 130%;
+		font-weight: bold;
+		background-color: #f5f5f5;
+	}
+	table {
+		margin-top: 70px;
+		margin-left: 100px;
+	}
+	td {
+
+	}
+</style>
+
+</head>
+<body>
+
+<a href="/"><button>처음으로</button></a>
+
+<table>
+	<td><img id="img1" src="/img/trash0.png" height="270" width="250"/></td>
+    <td>
+		<h1 id="text1"></h1>
+	</td> 
+</table>
+
+<script>
+	var waste = '<%=g_waste%>';
+	var str = "쓰레기통 포화량 : " + parseInt(waste) + "%";
+
+	if(waste < 0) {
+		$('#img1').attr("src", "/img/trash0.png");
+		str = "쓰레기통 포화량 : 0%";
+	}
+	else if(waste >= 0 && waste < 5) {
+		$('#img1').attr("src", "/img/trash0.png");
+	}
+	else if(waste >= 5 && waste < 40) {
+		$('#img1').attr("src", "/img/trash25.png");
+	}
+	else if(waste >= 40 && waste < 70) {
+		$('#img1').attr("src", "/img/trash50.png");
+	}	
+	else if(waste >= 70 && waste < 90) {
+		$('#img1').attr("src", "/img/trash75.png");
+	}
+	else if(waste >= 90 && waste < 100) {
+		$('#img1').attr("src", "/img/trash100.png");
+	}
+	else if(waste >= 100) {
+		$('#img1').attr("src", "/img/trash100.png");
+		str = "쓰레기통 포화량 : 100%";
+	}
+
+	$('#text1').append(str);
+
+</script>
+
+</body>
+</html>

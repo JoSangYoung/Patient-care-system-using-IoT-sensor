@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta charset="utf-8"/>
+<script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+
+<script language="JavaScript">
+	function func1() {
+		var ans = confirm("비상호출을 하겠습니까?");
+		if(ans == true)
+		{
+			$.ajax({
+				url:'http://192.168.0.27:8000/',
+				data:{
+				
+				},
+				dataType:'json',
+				type:'POST',
+
+				success:function(data){
+				
+				}
+			});
+		}	
+	}
+</script>
+
+<style>
+	table {
+		border-collapse: collapse;
+	}
+	td {
+		border: 2px solid black;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+	p {
+		font-size: 220%;
+		text-align: left;
+		font-weight: bold;
+	}
+	img {
+		height: 223px; 
+		width: 257px;
+	}
+
+</style>
+
+</head>
+<body>
+
+<table>
+  <tr>
+    <td><a href="/timetable"><img src="/img/timetable.png"/></a></td>
+    <td><a href="/medicine"><img src="/img/medicine.png"/></a></td> 
+    <td background="/img/humitemp.png">
+		<p id="text1"></p>
+		<p id="text2"></p>
+	</td>
+  </tr>
+  <tr>
+    <td><a href="/menu"><img src="/img/menu.png"/></a></td>
+    <td><a href="/data"><img src="/img/data.png"/></a></td>
+    <td><img src="/img/emergency.png" onClick="func1()"/></td>
+  </tr>
+
+</table> 
+
+<script>
+	var temp = '<%=g_temp%>';
+	var humi = '<%=g_humi%>';
+
+	var g_temp = "　 온도 : " +parseInt(temp)+ "º";
+	var g_humi = "　 습도 : " +parseInt(humi)+ "%";
+	
+	$('#text1').append(g_temp);
+	$('#text2').append(g_humi);
+
+	setTimeout("location.reload()",60000)
+</script>
+
+</body>
+</html>

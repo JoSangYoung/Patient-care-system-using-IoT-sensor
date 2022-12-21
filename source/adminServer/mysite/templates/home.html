@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Home page{% endblock %}
+
+{% block content %}
+<div id="content">
+<font size = "24">WELCOME!</font><p> 
+
+<font size = "16">This is Home page. <p>
+Click </font>
+<font size = "20"><a href = {% url 'cctv:index' %} style="color: green"> Manage button </a></font>
+<font size = "16">on the menu bar.</font>
+
+</div>
+{% endblock content %}
+
+{% block footer %}
+<div id="footer">
+
+</div>
+{% endblock footer %}

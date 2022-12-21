@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<title></title>
+<style>
+	table {
+		border-collapse: collapse;
+		width: 100%;
+		font-size: 150%;
+	}
+	td,th {
+		border: 1px solid black;
+		height: 52px;
+	}
+	td {
+		text-align: center;
+	}
+	th {
+		background-color: #fff7e0;
+	}
+	td:nth-child(odd) {
+		background-color: #f0ffe0;
+	}
+	td:nth-child(even) {
+		background-color: #ffffe0;
+	}
+	button {
+		width: 110px;
+		height: 50px;
+		font-size: 130%;
+		font-weight: bold;
+		background-color: #f5f5f5;
+	}
+</style>
+</head>
+<body>
+
+<a href="/"><button>처음으로</button></a>
+
+<h1 align="center">회진시간표</h1>
+
+<h2 id="text1" align="right"></h2>
+
+<table>
+	<tr>
+		<th>시간</th>
+		<th>주치의</th> 
+		<th>시간</th>
+		<th>주치의</th>
+	</tr>
+	<tr>
+		<td>06~08</td>
+		<td id="a"></td>
+		<td>14~16</td>
+		<td id="e"></td>
+	</tr>
+	<tr>
+		<td>08~10</td>
+		<td id="b"></td> 
+		<td>16~18</td>
+		<td id="f"></td>
+	</tr>
+	<tr>
+		<td>10~12</td>
+		<td id="c"></td> 
+		<td>18~20</td>
+		<td id="g"></td>
+	</tr>
+	<tr>
+		<td>12~14</td>
+		<td id="d"></td> 
+		<td>20~22</td>
+		<td id="h"></td>
+	</tr>
+</table> 
+
+<script>
+	var year = '<%=g_year%>';
+	var month = '<%=g_month%>';
+	var day = '<%=g_day%>';
+	var week = '<%=g_week%>';
+	var t6 = '<%=g_t6%>';
+	var t8 = '<%=g_t8%>';
+	var t10 = '<%=g_t10%>';
+	var t12 = '<%=g_t12%>';
+	var t14 = '<%=g_t14%>';
+	var t16 = '<%=g_t16%>';
+	var t18 = '<%=g_t18%>';
+	var t20 = '<%=g_t20%>';
+	var date = year + "년 " + month + "월 " + day + "일 " + week + "요일";
+	
+	$('#text1').append(date);
+	$('#a').append(t6);
+	$('#b').append(t8);
+	$('#c').append(t10);
+	$('#d').append(t12);
+	$('#e').append(t14);
+	$('#f').append(t16);
+	$('#g').append(t18);
+	$('#h').append(t20);
+</script>
+
+</body>
+</html>

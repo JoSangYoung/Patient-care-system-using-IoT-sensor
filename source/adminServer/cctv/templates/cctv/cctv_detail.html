@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}Room Detail Information{% endblock %}
+
+{% block content %}
+<div id="content">
+
+    <h2>{{ object.RoomName }}</h2> 
+    <tr>
+    <td>
+        <img style="max-width:100%" src="http://{{ object.Ip }}:{{ object.CamPort }}/?action=stream" />
+        </a>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <iframe src="http://{{ object.Ip }}:{{ object.InfoPort }}" width=850 height=500 frameborder=1>
+        </iframe>
+    </td>
+    </tr>
+
+</div>
+{% endblock %}
+

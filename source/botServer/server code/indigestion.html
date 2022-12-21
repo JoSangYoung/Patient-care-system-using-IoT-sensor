@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+<title></title>
+
+<style>
+	table {
+		border-collapse: collapse;
+		width: 100%;
+		height: 100%;
+		font-size: 100%;
+	}
+	td,th {
+		border: 2px solid lightgray;
+	}
+	td {
+		text-align: center;
+	}
+	th {
+		background-color: #fff7e0;
+	}
+	button {
+		width: 110px;
+		height: 50px;
+		font-size: 130%;
+		font-weight: bold;
+		background-color: #f5f5f5;
+	}
+	img {
+		width: 250px; 
+		height: 186px;
+	}
+</style>
+
+</head>
+<body>
+
+<a href="/"><button>처음으로</button></a>
+
+<table >
+	<tr>
+		<th>그림</th>
+		<th>제품명</th> 
+		<th>효능</th>
+		<th>주의사항</th>
+	</tr>
+	<tr>
+		<td><img id="img1"/></td>
+    	<td id="text1_1"></td>
+    	<td id="text1_2"></td>
+		<td id="text1_3"></td>
+	</tr>
+	<tr>
+		<td><img id="img2"/></td>
+    	<td id="text2_1"></td>
+    	<td id="text2_2"></td>
+		<td id="text2_3"></td>
+	</tr>
+
+
+</table> 
+
+<script>
+	var name1 = '<%=g_name1%>';
+	var name2 = '<%=g_name2%>';
+	var symptom1 = '<%=g_symptom1%>';
+	var symptom2 = '<%=g_symptom2%>';
+	var caution1 = '<%=g_caution1%>';
+	var caution2 = '<%=g_caution2%>';
+	var img1 = '<%=g_img1%>';
+	var img2 = '<%=g_img2%>';
+
+	$('#img1').attr("src", "/img/베나치오.jpg");
+	$('#img2').attr("src", "/img/베아제.jpg");
+	$('#text1_1').append(name1);
+	$('#text2_1').append(name2);
+	$('#text1_2').append(symptom1);
+	$('#text2_2').append(symptom2);
+	$('#text1_3').append(caution1);
+	$('#text2_3').append(caution2);
+</script>
+
+</body>
+</html>
